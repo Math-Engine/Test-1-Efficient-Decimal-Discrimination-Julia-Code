@@ -44,6 +44,6 @@ jobs:
     - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_1 ).jl
       run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}
     - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_2 ).jl
-      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_2 }}.jl ${{ github.event.inputs.n }}
     - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_3 ).jl
-      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_3 }}.jl ${{ github.event.inputs.n }}

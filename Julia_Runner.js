@@ -2,7 +2,7 @@ const { spawn } = require('child_process');
 
 const startTime = process.hrtime();
 
-const juliaProcess = spawn('julia', [${process.argv[2]}]);
+const juliaProcess = spawn('julia', [process.argv[2]], [process.argv[3]]);
 
 juliaProcess.stdout.on('data', (data) => {
   process.stdout.write(data);

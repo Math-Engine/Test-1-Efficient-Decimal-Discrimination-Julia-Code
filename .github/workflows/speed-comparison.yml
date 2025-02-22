@@ -1,0 +1,32 @@
+name: Speed-Comparison-Test-1-Efficient-Decimal-Discrimination-Julia-Code
+
+on:
+  workflow_dispatch:
+    inputs:
+      n:
+        description: '소수 판별할 자연수의 개수'
+        required: true
+        default: '2147483646'
+        type: string
+
+run-name: Speed Comparison - [ ${{ github.event.inputs.n }} ]
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '23.x'
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@v2
+      with:
+        version: '1'
+    - name: Run Julia_Runner.js Decimal_Discrimination-1.jl
+      run: node Julia_Runner.js Decimal_Discrimination-1.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination-2.jl
+      run: node Julia_Runner.js Decimal_Discrimination-2.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination-3.jl
+      run: node Julia_Runner.js Decimal_Discrimination-3.jl ${{ github.event.inputs.n }}

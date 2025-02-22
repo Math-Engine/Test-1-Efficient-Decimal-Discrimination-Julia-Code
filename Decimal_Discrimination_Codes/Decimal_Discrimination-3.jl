@@ -20,5 +20,5 @@ function is_prime(n::Int)
 end
 
 for i in 1:parse(Int, ARGS[1])
-    println("i : $(is_prime(i))")
+    println("$(i) : $(is_prime(i))")
 end

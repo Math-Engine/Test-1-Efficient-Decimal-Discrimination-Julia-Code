@@ -8,8 +8,23 @@ on:
         required: true
         default: '2147483646'
         type: string
+      code_num_1:
+        description: 'Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_1 ).jl'
+        required: true
+        default: '1'
+        type: string
+      code_num_2:
+        description: 'Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_2 ).jl'
+        required: true
+        default: '1'
+        type: string
+      code_num_3:
+        description: 'Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_3 ).jl'
+        required: true
+        default: '1'
+        type: string
 
-run-name: Speed Comparison - [ ${{ github.event.inputs.n }} ]
+run-name: Speed Comparison - [ ${{ github.event.inputs.n }} ] [ ${{ github.event.inputs.code_num_1 }} , ${{ github.event.inputs.code_num_2 }} , ${{ github.event.inputs.code_num_3 }} ]
 
 jobs:
   calculate:
@@ -24,9 +39,11 @@ jobs:
       uses: julia-actions/setup-julia@v2
       with:
         version: '1'
-    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-1.jl
-      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-1.jl ${{ github.event.inputs.n }}
-    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-2.jl
-      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-2.jl ${{ github.event.inputs.n }}
-    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-3.jl
-      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-3.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination.jl
+      run: node Julia_Runner.js Decimal_Discrimination.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_1 ).jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_2 ).jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-( code_num_3 ).jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-${{ github.event.inputs.code_num_1 }}.jl ${{ github.event.inputs.n }}

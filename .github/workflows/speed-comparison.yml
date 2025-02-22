@@ -24,9 +24,9 @@ jobs:
       uses: julia-actions/setup-julia@v2
       with:
         version: '1'
-    - name: Run Julia_Runner.js Decimal_Discrimination-1.jl
-      run: node Julia_Runner.js Decimal_Discrimination-1.jl ${{ github.event.inputs.n }}
-    - name: Run Julia_Runner.js Decimal_Discrimination-2.jl
-      run: node Julia_Runner.js Decimal_Discrimination-2.jl ${{ github.event.inputs.n }}
-    - name: Run Julia_Runner.js Decimal_Discrimination-3.jl
-      run: node Julia_Runner.js Decimal_Discrimination-3.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-1.jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-1.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-2.jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-2.jl ${{ github.event.inputs.n }}
+    - name: Run Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-3.jl
+      run: node Julia_Runner.js Decimal_Discrimination_Codes/Decimal_Discrimination-3.jl ${{ github.event.inputs.n }}
